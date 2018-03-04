@@ -114,9 +114,6 @@ namespace Temp_Converter
 					{
 						MessageBox.Show("Something went wrong!");
 					}
-					// DEBUG
-					MessageBox.Show("Index1: " + intTypeIn + "\nIndex2: "
-									+ intTypeOut + "\nTemp: " + dblTempOut);
 					//------Show your work!-------------------
 					//
 					string sOut = "";
