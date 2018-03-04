@@ -28,39 +28,41 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.button1 = new System.Windows.Forms.Button();
+			this.btnConvert = new System.Windows.Forms.Button();
 			this.btnReset = new System.Windows.Forms.Button();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblTempOut = new System.Windows.Forms.Label();
-			this.txtTempIn = new System.Windows.Forms.TextBox();
 			this.cmbTypeIn = new System.Windows.Forms.ComboBox();
 			this.cmbTypeOut = new System.Windows.Forms.ComboBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
+			this.txtTempIn = new System.Windows.Forms.TextBox();
 			this.SuspendLayout();
 			// 
-			// button1
+			// btnConvert
 			// 
-			this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.Location = new System.Drawing.Point(106, 205);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 39);
-			this.button1.TabIndex = 0;
-			this.button1.Text = "Convert!";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.btnConvert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnConvert.Location = new System.Drawing.Point(106, 205);
+			this.btnConvert.Name = "btnConvert";
+			this.btnConvert.Size = new System.Drawing.Size(75, 39);
+			this.btnConvert.TabIndex = 3;
+			this.btnConvert.Text = "Convert!";
+			this.btnConvert.UseVisualStyleBackColor = true;
+			this.btnConvert.Click += new System.EventHandler(this.button1_Click);
 			// 
 			// btnReset
 			// 
+			this.btnReset.DialogResult = System.Windows.Forms.DialogResult.Cancel;
 			this.btnReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.btnReset.Location = new System.Drawing.Point(12, 227);
 			this.btnReset.Name = "btnReset";
 			this.btnReset.Size = new System.Drawing.Size(28, 27);
-			this.btnReset.TabIndex = 0;
+			this.btnReset.TabIndex = 4;
 			this.btnReset.Text = "X";
 			this.btnReset.TextAlign = System.Drawing.ContentAlignment.TopCenter;
 			this.btnReset.UseVisualStyleBackColor = true;
+			this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
 			// 
 			// label1
 			// 
@@ -74,21 +76,12 @@
 			// lblTempOut
 			// 
 			this.lblTempOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblTempOut.Location = new System.Drawing.Point(83, 154);
+			this.lblTempOut.Location = new System.Drawing.Point(15, 154);
 			this.lblTempOut.Name = "lblTempOut";
-			this.lblTempOut.Size = new System.Drawing.Size(113, 21);
-			this.lblTempOut.TabIndex = 1;
+			this.lblTempOut.Size = new System.Drawing.Size(258, 21);
+			this.lblTempOut.TabIndex = 5;
 			this.lblTempOut.Text = "...";
 			this.lblTempOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// txtTempIn
-			// 
-			this.txtTempIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.txtTempIn.Location = new System.Drawing.Point(185, 15);
-			this.txtTempIn.Name = "txtTempIn";
-			this.txtTempIn.Size = new System.Drawing.Size(91, 20);
-			this.txtTempIn.TabIndex = 2;
-			this.txtTempIn.Text = "Enter temp";
 			// 
 			// cmbTypeIn
 			// 
@@ -101,7 +94,7 @@
 			this.cmbTypeIn.Location = new System.Drawing.Point(12, 99);
 			this.cmbTypeIn.Name = "cmbTypeIn";
 			this.cmbTypeIn.Size = new System.Drawing.Size(121, 21);
-			this.cmbTypeIn.TabIndex = 3;
+			this.cmbTypeIn.TabIndex = 1;
 			// 
 			// cmbTypeOut
 			// 
@@ -113,7 +106,7 @@
 			this.cmbTypeOut.Location = new System.Drawing.Point(155, 99);
 			this.cmbTypeOut.Name = "cmbTypeOut";
 			this.cmbTypeOut.Size = new System.Drawing.Size(121, 21);
-			this.cmbTypeOut.TabIndex = 3;
+			this.cmbTypeOut.TabIndex = 2;
 			// 
 			// label2
 			// 
@@ -142,26 +135,35 @@
 			this.label4.TabIndex = 1;
 			this.label4.Text = "Reset";
 			// 
+			// txtTempIn
+			// 
+			this.txtTempIn.Location = new System.Drawing.Point(194, 12);
+			this.txtTempIn.Name = "txtTempIn";
+			this.txtTempIn.Size = new System.Drawing.Size(82, 20);
+			this.txtTempIn.TabIndex = 0;
+			// 
 			// Form1
 			// 
+			this.AcceptButton = this.btnConvert;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.AutoSize = true;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.CancelButton = this.btnReset;
 			this.ClientSize = new System.Drawing.Size(288, 266);
+			this.Controls.Add(this.txtTempIn);
 			this.Controls.Add(this.cmbTypeOut);
 			this.Controls.Add(this.cmbTypeIn);
-			this.Controls.Add(this.txtTempIn);
 			this.Controls.Add(this.lblTempOut);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.btnReset);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.btnConvert);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
 			this.Name = "Form1";
-			this.Text = "Form1";
+			this.ShowIcon = false;
+			this.Text = "Temp Converter";
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -169,16 +171,16 @@
 
 		#endregion
 
-		private System.Windows.Forms.Button button1;
+		private System.Windows.Forms.Button btnConvert;
 		private System.Windows.Forms.Button btnReset;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblTempOut;
-		private System.Windows.Forms.TextBox txtTempIn;
 		private System.Windows.Forms.ComboBox cmbTypeIn;
 		private System.Windows.Forms.ComboBox cmbTypeOut;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
+		private System.Windows.Forms.TextBox txtTempIn;
 	}
 }
 
